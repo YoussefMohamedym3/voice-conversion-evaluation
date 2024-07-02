@@ -1,5 +1,7 @@
-Converted/
-Source/
-Target/
+Voices/
 .env
 *.png
+*.json
+*.txt
+tempCodeRunnerFile.py
+mos_model_and_checkpoints/__pycache__
