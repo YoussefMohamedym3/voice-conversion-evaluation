@@ -24,6 +24,8 @@ When converting a voice, it is crucial to:
 - **Importance**:
   - **Spectral Accuracy**: Measures how close the converted audio's spectral envelope is to the target.
   - Lower MCD values (4–6 dB for high-quality conversion) represent better spectral similarity.
+- **Unit**:
+  - Lower MCD values (in dB) indicate better conversion performance. Typically, values between 4 and 6 dB represent high-quality conversions.
 
 ### 2. **Fundamental Frequency RMSE (F0_RMSE) & logF0 RMSE**
 
@@ -34,6 +36,8 @@ When converting a voice, it is crucial to:
 - **Importance**:
   - **Pitch Preservation**: Evaluates similarity of pitch between source and converted audio.
   - Lower RMSE (0.1–0.5 for good performance) reflects better pitch alignment.
+- **Unit**:
+  - Lower RMSE values indicate better alignment of pitch between audio signals. Typical Range: 0.1 to 0.5 for good performance.
 
 ### 3. **Mean Squared Deviation (MSD)**
 
@@ -42,6 +46,8 @@ When converting a voice, it is crucial to:
   - Analyzes temporal dynamics by computing MSD between modulation spectra of target and converted audio.
 - **Importance**:
   - **Temporal Similarity**: Assesses how well the temporal dynamics of converted audio match the target.
+- **Unit**:
+  - Lower MSD values indicate better preservation of temporal dynamics.
 
 ### 4. **Global Variance (GV)**
 
@@ -50,6 +56,8 @@ When converting a voice, it is crucial to:
   - Computes variance of static features (e.g., MCEPs) for target and converted audio.
 - **Importance**:
   - **Expressiveness**: Evaluates whether converted audio retains the natural variance needed for naturalness.
+- **Unit**:
+  - Higher similarity in GV between target and converted audio indicates better performance.
 
 ### 5. **Signal-to-Noise Ratio (SNR)**
 
@@ -58,6 +66,10 @@ When converting a voice, it is crucial to:
   - Measures the ratio of signal power to noise power in decibels (dB).
 - **Importance**:
   - **Quality Assessment**: Higher SNR reflects less noise and better signal preservation.
+- **Unit**:
+  - Decibels (dB).
+  - Higher SNR values indicate less noise and better signal quality.
+  - Lower SNR values indicate more noise or distortion.
 
 ### 6. **Mel-Cepstral Coefficient (MCEP) Trajectories**
 
@@ -66,6 +78,9 @@ When converting a voice, it is crucial to:
   - Visualizes MCEP trajectories for selected dimensions of target and converted audio.
 - **Importance**:
   - **Spectral Dynamics**: Reflects spectral envelope dynamics and temporal coherence.
+- **Unit**:
+  - MCEP values plotted against frame indices.
+  - Closer MCEP trajectories between target and converted audio indicate better voice conversion quality and spectral similarity.
 
 ### 7. **Mean Mel-Cepstral Coefficients (MCEP)**
 
@@ -74,6 +89,9 @@ When converting a voice, it is crucial to:
   - Visualizes mean MCEP values for target and converted audio.
 - **Importance**:
   - **Spectral Similarity**: Summarizes average spectral characteristics.
+- **Unit**:
+  - Mean MCEP values plotted against MCEP dimensions.
+  - Closer mean MCEP distributions between target and converted audio indicate better preservation of spectral features.
 
 ### 8. **Scatter Plots of MCEP**
 
@@ -82,6 +100,8 @@ When converting a voice, it is crucial to:
   - Generates scatter plots to compare MCEP dimensions for target and converted audio.
 - **Importance**:
   - **Dimensional Analysis**: Highlights correlations in spectral features.
+- **Unit**:
+  - Closer and more aligned distributions between target and converted audio indicate better spectral feature matching.
 
 ### 9. **Modulation Spectrum**
 
@@ -90,6 +110,9 @@ When converting a voice, it is crucial to:
   - Analyzes temporal and spectral dynamics through FFT-based modulation spectrum.
 - **Importance**:
   - **Temporal-Spectral Analysis**: Measures preservation of modulations.
+- **Unit**:
+  - Log-scaled modulation spectrum plots for selected dimensions.
+  - Closer and more aligned spectra between target and converted audio indicate better temporal and spectral feature preservation.
 
 ### 10. **MOS Prediction**
 
@@ -98,6 +121,8 @@ When converting a voice, it is crucial to:
   - Predicts Mean Opinion Score (MOS) using MBNet for perceptual quality evaluation.
 - **Importance**:
   - **Quality Assessment**: Automates subjective quality benchmarking.
+- **Unit**:
+  - MOS (Mean Opinion Score): A scalar valueon a scale from 1 (Bad) to 5 (Excellent), where higher MOS indicates better subjective quality.
 
 ### 11. **Speaker Verification**
 
@@ -107,6 +132,8 @@ When converting a voice, it is crucial to:
 - **Importance**:
   - **Speaker Identity**: Evaluates how well the speaker identity is preserved.
   - **Acceptance Rate**: Ranges from 0 (no matches) to 1 (perfect matches).
+- **Unit**:
+  - Speaker Verification Acceptance Rate (SVAR): A ratio ranging from 0 (no matches) to 1 (perfect matches), representing the proportion of audio pairs that meet or exceed the threshold for speaker similarity.
 
 ---
 
